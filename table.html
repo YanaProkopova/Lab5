@@ -1,0 +1,127 @@
+<html>
+
+<head>
+    <title>Лабораторная работа 4</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <a href="L5.html"> Основная страница</a>
+    <h1>Таблица о студантах</h1>
+    <table id="table">
+        <caption>Список</caption>
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>ФИО</th>
+                <th>Форма поступления</th>
+                <th>Номер зачётной книжки</th>
+                <th>Номер группы</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Прокопова Яна Валерьевна</td>
+                <td>Очная</td>
+                <td>1111</td>
+                <td>6201-090301D</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Фойт Максим Вячеславович</td>
+                <td>Очная</td>
+                <td>2222</td>
+                <td>6202-090301D</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Карпунин Константин Викторович</td>
+                <td>Очная</td>
+                <td>3333</td>
+                <td>6203-090301D</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Ушаков Данил Романович</td>
+                <td>Очная</td>
+                <td>4444</td>
+                <td>6204-090301D</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Махмутов Арслан Русланович</td>
+                <td>Очная</td>
+                <td>5555</td>
+                <td>6205-090301D</td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td>Селиверстов Дмитрий Павлович</td>
+                <td>Очная</td>
+                <td>6666</td>
+                <td>6206-090301D</td>
+            </tr>
+
+            <div class="Form">
+                <br>
+                <br>
+                <h2>Добавить информацию о студенте</h2>
+                <form id="Form">
+
+                    <label for="number">Номер:</label>
+                    <br>
+                    <input type="text" id="number">
+
+                    <br>
+                    <label for="fullname">ФИО:</label>
+                    <br>
+                    <input type="text" id="fullname">
+
+                    <br>
+                    <label for="form">Форма поступления:</label>
+                    <br>
+                    <input type="text" id="form">
+
+                    <br>
+                    <label for="booknumber">Номер зачетной книжки:</label>
+                    <br>
+                    <input type="text" id="booknumber">
+
+                    <br>
+                    <label for="num">Номер группы:</label>
+                    <br>
+                    <input type="text" id="num">
+
+                    <br>
+                    <br>
+                    <input type="submit" value="Добавить">
+                </form>
+            </div>
+
+
+</body>
+
+<script>
+    document.getElementById("Form").onsubmit = function (event) {
+        event.preventDefault();
+
+        var table = document.getElementById("table");
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        cell1.innerHTML = document.getElementById("number").value;
+        cell2.innerHTML = document.getElementById("fullname").value;
+        cell3.innerHTML = document.getElementById("form").value;
+        cell4.innerHTML = document.getElementById("booknumber").value;
+        cell5.innerHTML = document.getElementById("num").value;
+        document.getElementById('Form').reset();
+    };
+</script>
+
+
+</html>
